@@ -6,8 +6,11 @@ public class OnHandSalaryCalculator {
         this.taxCalculator = taxCalculator;
     }
 
-    public long getOnHandSalary(long income) {
-        long tax = taxCalculator.calculateTax(income);
-        return income - tax;
+    public long getOnHandSalary(int income) {
+        if(income > 0) {
+            long tax = taxCalculator.calculateTax(income + 10);
+            return income - tax;
+        }
+       return 0;
     }
 }
