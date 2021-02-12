@@ -28,6 +28,13 @@ class TaxCalculatorTest {
     }
 
     @Test
+    void should_calculate_tax_when_income_is_250001() {
+        long tax = taxCalculator.calculateTax(500000);
+
+        assertEquals(12500, tax);
+    }
+
+    @Test
     void should_calculate_tax_when_income_is_between_500001_and_1000000() {
         long tax = taxCalculator.calculateTax(900000);
 
